@@ -18,11 +18,13 @@ const Footer = () => {
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src="/lovable-uploads/038df2fe-fc88-4942-85ee-8f62c9f0a969.png"
-                  alt="Agro+ Nutrição Animal" 
-                  className="h-12 w-auto"
-                />
+                <div className="bg-white p-3 rounded-lg shadow-sm">
+                  <img 
+                    src="/lovable-uploads/038df2fe-fc88-4942-85ee-8f62c9f0a969.png"
+                    alt="Agro+ Nutrição Animal" 
+                    className="h-12 w-auto"
+                  />
+                </div>
                 <div>
                   <h3 className="text-xl font-bold">Agro+ Nutrição Animal</h3>
                   <p className="text-primary-foreground/80 text-sm">
