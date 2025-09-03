@@ -240,7 +240,7 @@ const ProductCarousel = () => {
 
           {/* Image Modal */}
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-            <DialogContent className="max-w-7xl w-full h-[90vh] p-0 bg-black/95 border-0">
+            <DialogContent className="max-w-[95vw] w-full max-h-[95vh] h-full p-0 bg-black/95 border-0 overflow-hidden">
               {selectedImage !== null && (
                 <div className="relative w-full h-full flex items-center justify-center">
                   {/* Close Button */}
@@ -272,30 +272,36 @@ const ProductCarousel = () => {
                     <ChevronRight className="h-8 w-8" />
                   </Button>
 
-                  {/* Main Image */}
-                  <div className="w-full h-full flex items-center justify-center p-8">
-                    <div className="relative max-w-full max-h-full">
+                  {/* Main Image Container */}
+                  <div className="w-full h-full flex items-center justify-center p-4 sm:p-8 pb-20">
+                    <div className="relative w-full h-full flex items-center justify-center">
                       <img
                         src={images[selectedImage].src}
                         alt={images[selectedImage].alt}
-                        className="max-w-full max-h-full object-contain"
+                        className="max-w-full max-h-full w-auto h-auto object-contain"
+                        style={{
+                          maxWidth: 'calc(100vw - 8rem)',
+                          maxHeight: 'calc(100vh - 12rem)'
+                        }}
                       />
-                      
-                      {/* Image Info */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                        <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">
-                          {images[selectedImage].title}
-                        </h3>
-                        <p className="text-white/90 text-sm sm:text-base">
-                          {images[selectedImage].description}
-                        </p>
-                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image Info - Fixed at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 sm:p-6">
+                    <div className="max-w-4xl mx-auto">
+                      <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-bold mb-2">
+                        {images[selectedImage].title}
+                      </h3>
+                      <p className="text-white/90 text-sm sm:text-base">
+                        {images[selectedImage].description}
+                      </p>
                     </div>
                   </div>
 
                   {/* Image Counter */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white text-sm">
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm rounded-full px-3 py-1 sm:px-4 sm:py-2">
+                    <span className="text-white text-xs sm:text-sm font-medium">
                       {selectedImage + 1} de {images.length}
                     </span>
                   </div>
