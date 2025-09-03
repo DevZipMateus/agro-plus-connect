@@ -32,29 +32,27 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-      isScrolled ? "bg-background/95 backdrop-blur-md shadow-elegant border-b" : "bg-transparent"
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-elegant border-b transition-smooth">
       {/* Top bar with contact info */}
-      <div className="bg-primary text-primary-foreground py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+      <div className="bg-white border-b py-2 px-4">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm text-foreground">
           <div className="flex items-center gap-4">
             <a 
               href="tel:+5566997220387" 
-              className="flex items-center gap-2 hover:text-accent transition-smooth"
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
             >
               <Phone size={16} />
               (66) 99722-0387
             </a>
             <a 
               href="mailto:agromaisnutricaoanimal01@gmail.com" 
-              className="flex items-center gap-2 hover:text-accent transition-smooth"
+              className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
             >
               <Mail size={16} />
               agromaisnutricaoanimal01@gmail.com
             </a>
           </div>
-          <div className="text-xs">
+          <div className="text-xs text-muted-foreground">
             Peixoto de Azevedo - União do Norte
           </div>
         </div>
