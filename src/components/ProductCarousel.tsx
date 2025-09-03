@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const ProductCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   const images = [
     {
@@ -76,25 +86,29 @@ const ProductCarousel = () => {
 
   // Auto-advance carousel every 3 seconds
   useEffect(() => {
+    if (!api) return;
+
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      api.scrollNext();
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [api]);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  // Set up carousel API
+  useEffect(() => {
+    if (!api) return;
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+    api?.scrollTo(index);
   };
 
   return (
@@ -112,77 +126,60 @@ const ProductCarousel = () => {
           </div>
 
           {/* Carousel */}
-          <div className="relative max-w-5xl mx-auto">
-            <div className="relative overflow-hidden rounded-2xl bg-muted shadow-elegant">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
+          <div className="relative">
+            <Carousel
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="w-full flex-shrink-0 relative"
-                  >
-                    <div className="aspect-[16/9] sm:aspect-[16/8] lg:aspect-[16/7]">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover object-center"
-                        loading="lazy"
-                      />
-                    </div>
-                    
-                    {/* Text Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8">
-                        <div className="max-w-3xl">
-                          <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card className="hover:shadow-elegant transition-smooth group cursor-pointer h-full">
+                      <CardContent className="p-0 relative">
+                        <div className="aspect-[4/3] overflow-hidden rounded-t-lg">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                        
+                        <div className="p-4 sm:p-6">
+                          <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">
                             {image.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-white/90">
+                          <p className="text-sm sm:text-base text-muted-foreground overflow-hidden text-ellipsis" 
+                             style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                             {image.description}
                           </p>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
                 ))}
-              </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm"
-              onClick={goToPrevious}
-              aria-label="Produto anterior"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm"
-              onClick={goToNext}
-              aria-label="Próximo produto"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
+              </CarouselContent>
+              
+              <CarouselPrevious className="hidden sm:flex -left-12 bg-white/20 border-white/30 text-foreground hover:bg-white/30 backdrop-blur-sm" />
+              <CarouselNext className="hidden sm:flex -right-12 bg-white/20 border-white/30 text-foreground hover:bg-white/30 backdrop-blur-sm" />
+            </Carousel>
 
             {/* Indicators */}
             <div className="flex justify-center space-x-2 mt-6">
-              {images.map((_, index) => (
+              {Array.from({ length: count }, (_, index) => (
                 <button
                   key={index}
                   className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    currentIndex === index 
+                    current === index + 1 
                       ? 'bg-primary' 
                       : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
                   }`}
                   onClick={() => goToSlide(index)}
-                  aria-label={`Ir para produto ${index + 1}`}
+                  aria-label={`Ir para slide ${index + 1}`}
                 />
               ))}
             </div>
