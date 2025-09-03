@@ -8,54 +8,54 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Agro+ Green Theme - 60/30/10 Color Scheme */
+    /* Agro+ Improved Theme - Better readability and contrast */
     --background: 0 0% 100%;
-    --foreground: 141 15% 15%;
+    --foreground: 0 0% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 141 15% 15%;
+    --card-foreground: 0 0% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 141 15% 15%;
+    --popover-foreground: 0 0% 11%;
     
-    /* Primary Green - 30% usage */
-    --primary: 141 84% 27%;
+    /* Primary Green - More readable and professional */
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 141 74% 35%;
-    --primary-dark: 141 94% 22%;
+    --primary-light: 142 66% 50%;
+    --primary-dark: 142 86% 28%;
     
-    /* Secondary Gray - supporting */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 141 15% 15%;
+    /* Secondary Light Gray - Better separation */
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 11%;
     
-    /* Accent Green - 10% usage for highlights */
-    --accent: 141 74% 35%;
-    --accent-foreground: 0 0% 98%;
+    /* Accent Green - Lighter for better contrast */
+    --accent: 142 66% 50%;
+    --accent-foreground: 0 0% 11%;
     
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 40%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 141 84% 27%;
+    --input: 0 0% 94%;
+    --ring: 142 76% 36%;
     
-    /* Chart colors with green theme */
-    --chart-1: 141 84% 27%;
-    --chart-2: 141 74% 35%;
-    --chart-3: 141 64% 45%;
-    --chart-4: 141 54% 55%;
-    --chart-5: 141 44% 65%;
+    /* Chart colors with improved green theme */
+    --chart-1: 142 76% 36%;
+    --chart-2: 142 66% 50%;
+    --chart-3: 142 56% 60%;
+    --chart-4: 142 46% 70%;
+    --chart-5: 142 36% 80%;
     
     --radius: 0.75rem;
     
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 141 15% 15%;
-    --sidebar-primary: 141 84% 27%;
+    --sidebar-foreground: 0 0% 11%;
+    --sidebar-primary: 142 76% 36%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 141 15% 15%;
+    --sidebar-accent-foreground: 0 0% 11%;
     --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 141 84% 27%;
+    --sidebar-ring: 142 76% 36%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));

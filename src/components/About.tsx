@@ -26,7 +26,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary/30">
+    <section id="about" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -126,7 +126,7 @@ const About = () => {
 
           {/* Bottom message */}
           <div className="text-center mt-16">
-            <div className="bg-primary/5 rounded-2xl p-8 max-w-4xl mx-auto">
+            <div className="bg-muted rounded-2xl p-8 max-w-4xl mx-auto border">
               <p className="text-lg text-foreground font-medium">
                 "Aqui, você encontra muito mais que produtos: encontra parceria, conhecimento 
                 e confiança para cuidar da sua produção e do seu negócio."

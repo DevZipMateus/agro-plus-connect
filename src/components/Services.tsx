@@ -78,7 +78,7 @@ const Services = () => {
                 className="hover:shadow-elegant transition-smooth group cursor-pointer"
               >
                 <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full w-fit group-hover:bg-primary/20 transition-smooth">
+                  <div className="mx-auto mb-4 p-3 bg-muted rounded-full w-fit group-hover:bg-primary/10 transition-smooth border">
                     <service.icon className="h-8 w-8 text-primary" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
@@ -102,7 +102,7 @@ const Services = () => {
           </div>
 
           {/* Partners Section */}
-          <div className="bg-secondary/30 rounded-2xl p-8 mb-16">
+          <div className="bg-muted rounded-2xl p-8 mb-16 border">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Nossos Parceiros

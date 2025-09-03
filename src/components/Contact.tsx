@@ -47,7 +47,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-secondary/30">
+    <section id="contact" className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -73,7 +73,7 @@ const Contact = () => {
                   <Card key={index} className="hover:shadow-elegant transition-smooth">
                     <CardHeader className="pb-3">
                       <CardTitle className="flex items-center gap-3 text-lg">
-                        <div className="p-2 bg-primary/10 rounded-lg">
+                        <div className="p-2 bg-muted rounded-lg border">
                           <info.icon className="h-5 w-5 text-primary" />
                         </div>
                         {info.title}
@@ -182,7 +182,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                  <Button className="bg-primary hover:bg-primary-dark text-primary-foreground">
                     @agromaisuniaodonorte
                   </Button>
                 </a>
