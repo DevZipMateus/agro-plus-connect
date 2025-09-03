@@ -27,6 +27,7 @@ const Header = () => {
     { label: "Início", section: "hero" },
     { label: "Sobre", section: "about" },
     { label: "Serviços", section: "services" },
+    { label: "Produtos", section: "products" },
     { label: "Contato", section: "contact" },
   ];
 

@@ -73,6 +73,14 @@ const Footer = () => {
                 </li>
                 <li>
                   <button 
+                    onClick={() => scrollToSection('products')}
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                  >
+                    Produtos
+                  </button>
+                </li>
+                <li>
+                  <button 
                     onClick={() => scrollToSection('contact')}
                     className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                   >
