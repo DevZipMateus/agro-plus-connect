@@ -1,5 +1,4 @@
 import { Phone, Mail, MapPin, Instagram } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,7 +19,7 @@ const Footer = () => {
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img 
-                  src={logo} 
+                  src="/lovable-uploads/038df2fe-fc88-4942-85ee-8f62c9f0a969.png"
                   alt="Agro+ Nutrição Animal" 
                   className="h-12 w-auto"
                 />
