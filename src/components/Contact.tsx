@@ -139,14 +139,14 @@ const Contact = () => {
                 <CardContent className="p-0">
                   <div className="aspect-video">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.842845384885!2d-54.97468768462773!3d-10.218481292652676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDEzJzA2LjUiUyA1NMKwNTgnMjAuNCJX!5e0!3m2!1spt-BR!2sbr!4v1635789876543!5m2!1spt-BR!2sbr"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.8428453848855!2d-54.44174438462773!3d-10.433722292652676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDI2JzAxLjQiUyA1NMKwMjYnMjEuOCJX!5e0!3m2!1spt-BR!2sbr!4v1635789876543!5m2!1spt-BR!2sbr"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen={true}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Localização da Agro+ Nutrição Animal"
+                      title="Localização da Agro+ Nutrição Animal - Peixoto de Azevedo, União do Norte"
                     ></iframe>
                   </div>
                 </CardContent>
