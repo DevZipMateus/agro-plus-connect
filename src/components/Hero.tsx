@@ -11,8 +11,16 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 gradient-hero"></div>
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/lovable-uploads/d130e9c9-bd7f-45e8-8ed0-202fcff5ddee.png)'
+        }}
+      ></div>
+      
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
       
       {/* Decorative elements */}
       <div className="absolute inset-0 opacity-10">
