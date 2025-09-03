@@ -47,34 +47,34 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-muted/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Entre em Contato
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
               Estamos prontos para atender você. Entre em contato conosco e descubra 
               como podemos ajudar no desenvolvimento da sua propriedade rural.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Information */}
-            <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-8">
+            <div className="order-2 lg:order-1">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8">
                 Informações de Contato
               </h3>
               
-              <div className="grid gap-6 mb-8">
+              <div className="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {contactInfo.map((info, index) => (
                   <Card key={index} className="hover:shadow-elegant transition-smooth">
                     <CardHeader className="pb-3">
-                      <CardTitle className="flex items-center gap-3 text-lg">
+                      <CardTitle className="flex items-center gap-3 text-base sm:text-lg">
                         <div className="p-2 bg-muted rounded-lg border">
-                          <info.icon className="h-5 w-5 text-primary" />
+                          <info.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                         </div>
                         {info.title}
                       </CardTitle>
@@ -88,12 +88,12 @@ const Contact = () => {
                                 href={detail.link}
                                 target={detail.link.startsWith('http') ? '_blank' : undefined}
                                 rel={detail.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                className="text-primary hover:text-primary-dark transition-smooth"
+                                className="text-primary hover:text-primary-dark transition-smooth text-sm sm:text-base"
                               >
                                 {detail.label}
                               </a>
                             ) : (
-                              <span className="text-muted-foreground">{detail.label}</span>
+                              <span className="text-muted-foreground text-sm sm:text-base">{detail.label}</span>
                             )}
                           </div>
                         ))}
@@ -105,12 +105,12 @@ const Contact = () => {
 
               {/* WhatsApp CTA */}
               <Card className="bg-gradient-primary border-0 text-primary-foreground">
-                <CardContent className="p-6 text-center">
-                  <MessageCircle className="h-12 w-12 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">
+                <CardContent className="p-4 sm:p-6 text-center">
+                  <MessageCircle className="h-10 w-10 sm:h-12 sm:w-12 mx-auto mb-3 sm:mb-4" />
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2">
                     Atendimento via WhatsApp
                   </h3>
-                  <p className="mb-4 opacity-90">
+                  <p className="mb-4 opacity-90 text-sm sm:text-base">
                     Fale conosco diretamente pelo WhatsApp para um atendimento mais rápido
                   </p>
                   <a 
@@ -120,7 +120,7 @@ const Contact = () => {
                   >
                     <Button 
                       variant="secondary" 
-                      className="bg-white text-primary hover:bg-white/90 font-semibold"
+                      className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 font-semibold text-sm sm:text-base"
                     >
                       Chamar no WhatsApp
                     </Button>
@@ -130,8 +130,8 @@ const Contact = () => {
             </div>
 
             {/* Map */}
-            <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-8">
+            <div className="order-1 lg:order-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-6 sm:mb-8">
                 Nossa Localização
               </h3>
               
@@ -158,7 +158,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full text-sm sm:text-base">
                     <MapPin className="mr-2 h-4 w-4" />
                     Ver no Google Maps
                   </Button>
@@ -168,13 +168,13 @@ const Contact = () => {
           </div>
 
           {/* Instagram Section */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 sm:mt-16 text-center">
             <Card className="max-w-md mx-auto">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-4">
                   Siga-nos no Instagram
                 </h3>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 text-sm sm:text-base">
                   Acompanhe nossas novidades e dicas para o campo
                 </p>
                 <a 
@@ -182,7 +182,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button className="bg-primary hover:bg-primary-dark text-primary-foreground">
+                  <Button className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-primary-foreground text-sm sm:text-base">
                     @agromaisuniaodonorte
                   </Button>
                 </a>

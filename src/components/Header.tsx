@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-elegant border-b transition-smooth">
       {/* Top bar with contact info */}
-      <div className="bg-white border-b py-2 px-4">
+      <div className="bg-white border-b py-2 px-4 hidden md:block">
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm text-foreground">
           <div className="flex items-center gap-4">
             <a 
@@ -41,45 +41,45 @@ const Header = () => {
               className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
             >
               <Phone size={16} />
-              (66) 99722-0387
+              <span className="hidden lg:inline">(66) 99722-0387</span>
             </a>
             <a 
               href="mailto:agromaisnutricaoanimal01@gmail.com" 
               className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
             >
               <Mail size={16} />
-              agromaisnutricaoanimal01@gmail.com
+              <span className="hidden xl:inline">agromaisnutricaoanimal01@gmail.com</span>
             </a>
           </div>
-          <div className="text-xs text-muted-foreground">
+          <div className="text-xs text-muted-foreground hidden lg:block">
             Peixoto de Azevedo - União do Norte
           </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <img 
               src="/lovable-uploads/038df2fe-fc88-4942-85ee-8f62c9f0a969.png"
               alt="Agro+ Nutrição Animal - Logo" 
-              className="h-12 w-auto"
+              className="h-10 sm:h-12 w-auto"
             />
             <div className="hidden sm:block">
-              <h2 className="font-bold text-lg text-primary">Agro+ Nutrição Animal</h2>
-              <p className="text-xs text-muted-foreground">Mais que produtos, entregamos soluções</p>
+              <h2 className="font-bold text-base lg:text-lg text-primary">Agro+ Nutrição Animal</h2>
+              <p className="text-xs text-muted-foreground hidden lg:block">Mais que produtos, entregamos soluções</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
               <button
                 key={item.section}
                 onClick={() => scrollToSection(item.section)}
-                className="text-foreground hover:text-primary font-medium transition-smooth"
+                className="text-foreground hover:text-primary font-medium transition-smooth text-sm xl:text-base"
               >
                 {item.label}
               </button>
@@ -89,7 +89,7 @@ const Header = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button className="bg-primary hover:bg-primary-dark transition-smooth">
+              <Button className="bg-primary hover:bg-primary-dark transition-smooth text-sm">
                 WhatsApp
               </Button>
             </a>
@@ -97,7 +97,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -107,13 +107,32 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t">
+          <div className="lg:hidden mt-4 pb-4 border-t bg-white">
             <div className="flex flex-col gap-4 pt-4">
+              {/* Contact info for mobile */}
+              <div className="border-b pb-4 space-y-2">
+                <a 
+                  href="tel:+5566997220387" 
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  <Phone size={16} />
+                  (66) 99722-0387
+                </a>
+                <a 
+                  href="mailto:agromaisnutricaoanimal01@gmail.com" 
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth"
+                >
+                  <Mail size={16} />
+                  agromaisnutricaoanimal01@gmail.com
+                </a>
+              </div>
+              
+              {/* Navigation items */}
               {navItems.map((item) => (
                 <button
                   key={item.section}
                   onClick={() => scrollToSection(item.section)}
-                  className="text-left text-foreground hover:text-primary font-medium transition-smooth"
+                  className="text-left text-foreground hover:text-primary font-medium transition-smooth py-2"
                 >
                   {item.label}
                 </button>
@@ -124,7 +143,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 className="w-fit"
               >
-                <Button className="bg-primary hover:bg-primary-dark transition-smooth">
+                <Button className="w-full bg-primary hover:bg-primary-dark transition-smooth">
                   WhatsApp
                 </Button>
               </a>
