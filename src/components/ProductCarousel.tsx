@@ -47,6 +47,30 @@ const ProductCarousel = () => {
       alt: "Bebedouro Australiano - Metalforce",
       title: "Bebedouro Australiano",
       description: "Modo adequado de fornecimento de água com pintura eletrostática e diferentes capacidades."
+    },
+    {
+      src: "/lovable-uploads/4780d9f1-c5e0-4722-88a2-515233d4e26c.png",
+      alt: "Porteiras em Aço - Metalforce",
+      title: "Porteiras em Aço",
+      description: "Porteiras para divisão de pasto, curral e confinamento. Tamanhos de 2 a 6 metros com pintura eletrostática."
+    },
+    {
+      src: "/lovable-uploads/64fcda41-3a97-4b72-87cc-3de7bb9a4c81.png",
+      alt: "PotenFós Cria - Facholi",
+      title: "PotenFós Cria",
+      description: "Bezerros mais pesados e melhora o escore corporal das matrizes."
+    },
+    {
+      src: "/lovable-uploads/e67ca76d-5bbc-4ab5-9ccb-db386a4d020d.png",
+      alt: "Linha Metalforce Completa",
+      title: "Soluções em Aço Metalforce",
+      description: "Embarcador, cochos com e sem cobertura, bebedouro australiano e tronco de contenção robust."
+    },
+    {
+      src: "/lovable-uploads/27a9352e-d77c-43ab-beb2-b22713831c83.png",
+      alt: "PotenFós 80 - Facholi",
+      title: "PotenFós 80",
+      description: "Com 80g de fósforo para mais produtividade. Suplemento mineral de alta performance."
     }
   ];
 
