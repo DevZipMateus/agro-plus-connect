@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24 lg:pt-32">
       {/* Background image with responsive positioning */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-center lg:bg-center"
@@ -25,35 +25,35 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/60"></div>
       
       {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 hidden lg:block">
         <div className="absolute top-20 left-10 w-32 h-32 border border-white/20 rounded-full"></div>
         <div className="absolute bottom-20 right-10 w-48 h-48 border border-white/20 rounded-full"></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 border border-white/20 rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 sm:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-180px)] lg:min-h-[calc(100vh-200px)]">
             {/* Content */}
-            <div className="text-center lg:text-left order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 mb-4 sm:mb-6">
-                <Leaf className="h-4 w-4 text-accent" />
+            <div className="text-center lg:text-left order-2 lg:order-1 space-y-4 sm:space-y-6">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4">
+                <Leaf className="h-4 w-4 text-accent flex-shrink-0" />
                 <span className="text-white text-xs sm:text-sm font-medium">Desde 2022 no campo</span>
               </div>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                 Agro+ Nutrição Animal
               </h1>
               
-              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-3 sm:mb-4 font-medium">
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-medium">
                 Mais que produtos, entregamos soluções
               </p>
               
-              <p className="text-base sm:text-lg text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto lg:mx-0">
                 Oferecemos produtos de qualidade, atendimento personalizado e soluções completas para o dia a dia de quem vive e trabalha no campo.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-2">
                 <a 
                   href="https://wa.me/5566997220387" 
                   target="_blank" 
@@ -71,7 +71,8 @@ const Hero = () => {
                   className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold px-6 sm:px-8"
                   onClick={scrollToContact}
                 >
-                  Conheça Nossos Serviços
+                  <span className="hidden sm:inline">Conheça Nossos Serviços</span>
+                  <span className="sm:hidden">Nossos Serviços</span>
                 </Button>
               </div>
             </div>
@@ -79,19 +80,19 @@ const Hero = () => {
             {/* Stats/Features */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 order-1 lg:order-2">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center">
-                <Shield className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4" />
+                <Shield className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4 flex-shrink-0" />
                 <h3 className="text-white font-semibold text-base sm:text-lg mb-2">Qualidade Garantida</h3>
                 <p className="text-white/80 text-xs sm:text-sm">Trabalhamos apenas com marcas de confiança</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center">
-                <Users className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4" />
+                <Users className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4 flex-shrink-0" />
                 <h3 className="text-white font-semibold text-base sm:text-lg mb-2">Atendimento Personalizado</h3>
                 <p className="text-white/80 text-xs sm:text-sm">Cada cliente é tratado com atenção e cuidado</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 text-center sm:col-span-2">
-                <Leaf className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4" />
+                <Leaf className="h-10 w-10 sm:h-12 sm:w-12 text-accent mx-auto mb-3 sm:mb-4 flex-shrink-0" />
                 <h3 className="text-white font-semibold text-base sm:text-lg mb-2">Sustentabilidade</h3>
                 <p className="text-white/80 text-xs sm:text-sm">Incentivamos práticas que preservem o meio ambiente</p>
               </div>
